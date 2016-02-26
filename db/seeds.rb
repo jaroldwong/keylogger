@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Department.create(name: 'Economics')
+Department.create(name: 'History')
+Department.create(name: 'Philosophy')
+Department.create(name: 'Political Science')
+Department.create(name: 'Sociology')
+
+Location.create(building: 'SSH', room: '130')
+Location.create(building: 'SSH', room: '131')
