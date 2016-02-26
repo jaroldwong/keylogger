@@ -1,0 +1,33 @@
+<%= form_for(@key) do |f| %>
+  <% if @key.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@key.errors.count, "error") %> prohibited this key from being saved:</h2>
+
+      <ul>
+      <% @key.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :serial_no %><br>
+    <%= f.text_field :serial_no %>
+  </div>
+  <div class="field">
+    <%= f.label :key_class %><br>
+    <%= f.text_field :key_class %>
+  </div>
+  <div class="field">
+    <%= f.label :person_id %><br>
+    <%= f.number_field :person_id %>
+  </div>
+  <div class="field">
+    <%= f.label :issued %><br>
+    <%= f.check_box :issued %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

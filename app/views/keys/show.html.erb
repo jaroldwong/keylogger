@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Serial no:</strong>
+  <%= @key.serial_no %>
+</p>
+
+<p>
+  <strong>Key class:</strong>
+  <%= @key.key_class %>
+</p>
+
+<p>
+  <strong>Person:</strong>
+  <%= @key.person_id %>
+</p>
+
+<p>
+  <strong>Issued:</strong>
+  <%= @key.issued %>
+</p>
+
+<%= link_to 'Edit', edit_key_path(@key) %> |
+<%= link_to 'Back', keys_path %>

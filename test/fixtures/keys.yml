@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  serial_no: MyString
+  key_class: MyString
+  person_id: 1
+  issued: false
+
+two:
+  serial_no: MyString
+  key_class: MyString
+  person_id: 1
+  issued: false
