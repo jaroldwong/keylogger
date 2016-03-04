@@ -10,5 +10,18 @@
   <%= @person.loginid %>
 </p>
 
+<% if @keys.any? %>
+  <p>
+    <strong>Keys Assigned</strong>
+    <ol id="keys">
+      <% @keys.each do |key| %>
+        <li>
+          <%= key.serial_no %>
+        </li>
+        <% end %>
+    </ol>
+<% end %>
+
+
 <%= link_to 'Edit', edit_person_path(@person) %> |
 <%= link_to 'Back', people_path %>

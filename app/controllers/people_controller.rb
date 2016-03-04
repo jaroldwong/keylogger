@@ -10,6 +10,8 @@ class PeopleController < ApplicationController
   # GET /people/1
   # GET /people/1.json
   def show
+    @user = Person.find(params[:id])
+    @keys = @user.keys
   end
 
   # GET /people/new
