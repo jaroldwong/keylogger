@@ -3,12 +3,15 @@ Department.create!([
   {name: "History"},
   {name: "Philosophy"},
   {name: "Political Science"},
-  {name: "Sociology"}
+  {name: "Sociology"},
+  {name: "DSSIT"}
 ])
 DepartmentLocation.create!([
   {department_id: 2, location_id: 3},
   {department_id: 2, location_id: 5},
-  {department_id: 2, location_id: 4}
+  {department_id: 2, location_id: 4},
+  {department_id: 6, location_id: 1},
+  {department_id: 6, location_id: 2}
 ])
 DepartmentPerson.create!([
   {department_id: 2, person_id: 1},

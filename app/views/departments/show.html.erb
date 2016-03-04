@@ -5,5 +5,17 @@
   <%= @department.name %>
 </p>
 
+<% if @locations.any? %>
+  <p>
+    <strong>Department Locations</strong>
+    <ul id="locations">
+      <% @locations.each do |location| %>
+        <li>
+          <%= location.building %> || <%= location.room %>
+        </li>
+        <% end %>
+    </ul>
+<% end %>
+
 <%= link_to 'Edit', edit_department_path(@department) %> |
 <%= link_to 'Back', departments_path %>
