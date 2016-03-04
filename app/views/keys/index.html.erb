@@ -18,7 +18,7 @@
       <tr>
         <td><%= key.serial_no %></td>
         <td><%= key.key_class %></td>
-        <td><%= key.person_id %></td>
+        <td><%= key.person.name %></td>
         <td><%= key.issued %></td>
         <td><%= link_to 'Show', key %></td>
         <td><%= link_to 'Edit', edit_key_path(key) %></td>
