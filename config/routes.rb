@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'keys#index'
+
   resources :locations
   resources :keys
   resources :departments
