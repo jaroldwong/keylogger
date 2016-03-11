@@ -1,33 +1,50 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Department Keys</h1>
+<!-- <h1>Key Inventory</h1> -->
 
-<table>
+<ul class="nav nav-tabs">
+  <li class="<%= active_tab(root_path) %>">
+    <%= link_to "Inventory" %>
+  </li>
+  <li class="<%= active_tab(keys_path(issued: true)) %>">
+    <%= link_to "Issued", keys_path(issued: true) %>
+  </li>
+  <li class="<%= active_tab(keys_path(missing: true)) %>">
+    <%= link_to "Missing", keys_path(missing: true) %>
+  </li>
+</ul>
+
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Serial Number</th>
-      <th>Key Series Number</th>
-      <th>Person</th>
+      <th>Key Number</th>
+      <th>Department</th>
       <th>Issued</th>
-      <th colspan="3"></th>
+      <th>Access</th>
+      <!-- <th colspan="3"></th> -->
     </tr>
   </thead>
 
   <tbody>
     <% @keys.each do |key| %>
-      <tr>
+      <tr data-link="<%= edit_key_path(key) %>">
         <td><%= key.serial_no %></td>
         <td><%= key.key_class %></td>
+        <td><%= key.person.departments.first.name %></td>
         <td><%= key.person.name %></td>
-        <td><%= key.issued %></td>
+        <td><%= %></td>
+<!--         
         <td><%= link_to 'Show', key %></td>
         <td><%= link_to 'Edit', edit_key_path(key) %></td>
         <td><%= link_to 'Destroy', key, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+-->
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<!-- 
 <%= link_to 'New Key', new_key_path %>
+ -->
