@@ -4,10 +4,10 @@
 
 <ul class="nav nav-tabs">
   <li class="<%= active_tab(root_path) %>">
-    <%= link_to "Inventory" %>
+    <%= link_to "Iventory" %>
   </li>
-  <li class="<%= active_tab(keys_path(issued: true)) %>">
-    <%= link_to "Issued", keys_path(issued: true) %>
+  <li class="<%= active_tab(keys_path(unassigned: true)) %>">
+    <%= link_to "Unassigned", keys_path(unassigned: true) %>
   </li>
   <li class="<%= active_tab(keys_path(missing: true)) %>">
     <%= link_to "Missing", keys_path(missing: true) %>
@@ -31,8 +31,20 @@
       <tr data-link="<%= edit_key_path(key) %>">
         <td><%= key.serial_no %></td>
         <td><%= key.key_class %></td>
-        <td><%= key.person.departments.first.name %></td>
-        <td><%= key.person.name %></td>
+        <td>
+          <% if key.person.nil? %>
+            <%= "Unassigned" %>
+          <% else %>
+            <%= key.person.departments.first.name %>
+          <% end %>
+        </td>
+        <td>
+          <% if key.person.nil? %>
+            <%= "Unassigned" %>
+          <% else %>
+            <%= key.person.name %>
+          <% end %>
+        </td>
         <td><%= %></td>
 <!--         
         <td><%= link_to 'Show', key %></td>
