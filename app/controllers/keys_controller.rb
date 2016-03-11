@@ -4,7 +4,13 @@ class KeysController < ApplicationController
   # GET /keys
   # GET /keys.json
   def index
-    @keys = Key.all
+    if params[:issued]
+      @keys = Key.where(issued: true) 
+    elsif params[:missing]
+      @keys = Key.where(issued: false)
+    else
+      @keys = Key.all
+    end
   end
 
   # GET /keys/1
