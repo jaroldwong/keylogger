@@ -4,13 +4,13 @@
 
 <ul class="nav nav-tabs">
   <li class="<%= active_tab(root_path) %>">
-    <%= link_to "Inventory" %>
+    <%= link_to "Inventory", keys_path %>
   </li>
   <li class="<%= active_tab(keys_path(unassigned: true)) %>">
-    <%= link_to "Unassigned", keys_path(unassigned: true) %>
+    <%= link_to "Unassigned", filtered_keys_path(:unassigned) %>
   </li>
   <li class="<%= active_tab(keys_path(missing: true)) %>">
-    <%= link_to "Missing", keys_path(missing: true) %>
+    <%= link_to "Missing", filtered_keys_path(:missing) %>
   </li>
 </ul>
 

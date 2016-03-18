@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'keys#index'
 
+  get "keys/:scope" => "keys#index", as: :filtered_keys
+
   resources :locations
   resources :keys
   resources :departments

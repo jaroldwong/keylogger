@@ -4,12 +4,13 @@ class KeysController < ApplicationController
   # GET /keys
   # GET /keys.json
   def index
-    if params[:unassigned]
-      @keys = Key.where(issued: false, person_id: nil) 
-    elsif params[:missing]
-      @keys = Key.where(issued: false)
-    else
-      @keys = Key.all
+    case params[:scope]
+      when 'unassigned'
+        @keys = Key.unassigned
+      when 'missing'
+        @keys = Key.missing
+      else
+        @keys = Key.all
     end
   end
 
