@@ -4,7 +4,7 @@
 
 <ul class="nav nav-tabs">
   <li class="<%= active_tab(root_path) %>">
-    <%= link_to "Iventory" %>
+    <%= link_to "Inventory" %>
   </li>
   <li class="<%= active_tab(keys_path(unassigned: true)) %>">
     <%= link_to "Unassigned", keys_path(unassigned: true) %>
@@ -18,7 +18,7 @@
   <thead>
     <tr>
       <th>Serial Number</th>
-      <th>Key Number</th>
+      <th>Key Class</th>
       <th>Department</th>
       <th>Issued</th>
       <th>Access</th>
@@ -46,7 +46,7 @@
           <% end %>
         </td>
         <td><%= %></td>
-<!--         
+<!--
         <td><%= link_to 'Show', key %></td>
         <td><%= link_to 'Edit', edit_key_path(key) %></td>
         <td><%= link_to 'Destroy', key, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -57,6 +57,6 @@
 </table>
 
 <br>
-<!-- 
+<!--
 <%= link_to 'New Key', new_key_path %>
  -->
