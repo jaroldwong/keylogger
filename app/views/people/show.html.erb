@@ -5,14 +5,14 @@
   <%= @person.name %>
 </p>
 
-<p>
+<!-- <p>
   <strong>Loginid:</strong>
   <%= @person.loginid %>
-</p>
+</p> -->
 
 <% if @keys.any? %>
   <p>
-    <strong>Keys Assigned</strong>
+    <strong>Assigned Keys</strong>
     <ol id="keys">
       <% @keys.each do |key| %>
         <li>
@@ -20,8 +20,11 @@
         </li>
         <% end %>
     </ol>
+<% else %>
+  <p>
+    <strong>No keys assigned</strong>
+  </p>
 <% end %>
-
 
 <%= link_to 'Edit', edit_person_path(@person) %> |
 <%= link_to 'Back', people_path %>
