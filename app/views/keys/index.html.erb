@@ -3,7 +3,7 @@
 <!-- <h1>Key Inventory</h1> -->
 
 <ul class="nav nav-tabs">
-  <li class="<%= active_tab?(keys_path) %>">
+  <li class="<%= active_tab?(keys_path) %> <%= active_tab?(root_path) %>">
     <%= link_to "Inventory", keys_path %>
   </li>
   <li class="<%= active_tab?(filtered_keys_path(:unassigned)) %>">
