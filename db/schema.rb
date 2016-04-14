@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160219235916) do
+ActiveRecord::Schema.define(version: 20160414213333) do
 
   create_table "department_locations", force: :cascade do |t|
     t.integer  "department_id"
@@ -43,10 +43,10 @@ ActiveRecord::Schema.define(version: 20160219235916) do
   end
 
   create_table "keyway_locations", force: :cascade do |t|
-    t.string   "key_class"
     t.integer  "location_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "keyway_id"
   end
 
   create_table "keyways", force: :cascade do |t|

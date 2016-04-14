@@ -4,4 +4,9 @@ class Location < ActiveRecord::Base
 
   has_many :keyway_locations
   has_many :keyways, through: :keyway_locations
+
+  def display_name
+    self.building + ' ' + self.room
+  end
+
 end
