@@ -9,4 +9,7 @@ class Location < ActiveRecord::Base
     self.building + ' ' + self.room
   end
 
+  def keys
+    Key.where(key_class: self.keyways.pluck(:key_class))
+  end
 end

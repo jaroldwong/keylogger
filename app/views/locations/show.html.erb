@@ -1,14 +1,52 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Building:</strong>
-  <%= @location.building %>
+  <strong>Room: </strong>
+  <%= @location.building + @location.room %>
 </p>
 
 <p>
-  <strong>Room:</strong>
-  <%= @location.room %>
+  <strong>Department:</strong>
+  <%= @location.departments.first.name %>
 </p>
+
+<p>
+  <strong>Keys with access:</strong>
+</p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Serial Number</th>
+      <th>Key Class</th>
+      <th>Department</th>
+      <th>Owner</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @location.keys.each do |key| %>
+      <tr data-link="<%= edit_key_path(key) %>">
+        <td><%= key.serial_no %></td>
+        <td><%= key.key_class %></td>
+        <td>
+          <% if key.person.nil? %>
+            <%= "Unassigned" %>
+          <% else %>
+            <%= key.person.departments.first.name %>
+          <% end %>
+        </td>
+        <td>
+          <% if key.person.nil? %>
+            <%= "Unassigned" %>
+          <% else %>
+            <%= key.person.name %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>
