@@ -2,5 +2,10 @@
 
 <%= render 'form' %>
 
+<br>
+<p><strong>Room access: </strong>
+<%= @key.locations.join(', ') %><p>
+
+
 <%= link_to 'Show', @key %> |
 <%= link_to 'Back', keys_path %>

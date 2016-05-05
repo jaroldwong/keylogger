@@ -20,5 +20,10 @@
   <%= @key.issued %>
 </p>
 
+<p>
+  <strong>Door Access:</strong>
+  <%= @key.locations.join(', ') %>
+</p>
+
 <%= link_to 'Edit', edit_key_path(@key) %> |
 <%= link_to 'Back', keys_path %>

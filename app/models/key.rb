@@ -9,6 +9,6 @@ class Key < ActiveRecord::Base
   end
 
   def locations
-    keyways.map{|l| l.locations}.uniq.select{|l| l.display_name}
+    keyways.map{|l| l.locations}.flatten.uniq.map{|l| l.display_name}
   end
 end
