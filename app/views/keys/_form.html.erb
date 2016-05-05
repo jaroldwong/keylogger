@@ -24,8 +24,8 @@
     <%= f.collection_select(:person_id, Person.all, :id, :name) %>
   </div>
   <div class="field">
-    <%= f.label :issued, 'Issued?' %>
-    <%= f.check_box :issued %>
+    <%= f.label :missing, 'Key missing?' %>
+    <%= f.check_box :missing %>
   </div>
   <div class="actions">
     <%= f.submit %>

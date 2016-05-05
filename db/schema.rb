@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160414213333) do
+ActiveRecord::Schema.define(version: 20160505210541) do
 
   create_table "department_locations", force: :cascade do |t|
     t.integer  "department_id"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20160414213333) do
     t.string   "serial_no"
     t.string   "key_class"
     t.integer  "person_id"
-    t.boolean  "issued"
+    t.boolean  "missing"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
