@@ -1,8 +1,9 @@
 class Key < ActiveRecord::Base
   belongs_to :person
 
-  scope :unassigned, -> { where(issued: false, person_id: 1) }
-  scope :missing, -> { where(issued: false).where.not(person_id: 1) }
+  scope :assigned, -> { where.not(person_id: 1) }
+  scope :unassigned, -> { where(person_id: 1) }
+  scope :missing, -> { where(missing: true) }
 
   def display_name
     self.serial_no + ' ' + self.key_class

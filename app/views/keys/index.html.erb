@@ -4,7 +4,10 @@
 
 <ul class="nav nav-tabs">
   <li class="<%= active_tab?(keys_path) %> <%= active_tab?(root_path) %>">
-    <%= link_to "Inventory", keys_path %>
+    <%= link_to "All Keys", keys_path %>
+  </li>
+  <li class="<%= active_tab?(filtered_keys_path(:assigned)) %>">
+    <%= link_to "Assigned", filtered_keys_path(:assigned) %>
   </li>
   <li class="<%= active_tab?(filtered_keys_path(:unassigned)) %>">
     <%= link_to "Unassigned", filtered_keys_path(:unassigned) %>
@@ -20,7 +23,7 @@
       <th>Serial Number</th>
       <th>Key Class</th>
       <th>Department</th>
-      <th>Issued</th>
+      <th>Key Holder</th>
       <th>Door Access</th>
       <!-- <th colspan="3"></th> -->
     </tr>
@@ -32,18 +35,10 @@
         <td><%= key.serial_no %></td>
         <td><%= key.key_class %></td>
         <td>
-          <% if key.person.nil? %>
-            <%= "Unassigned" %>
-          <% else %>
-            <%= key.person.departments.first.name %>
-          <% end %>
+          <%= key.person.departments.first.name %>
         </td>
         <td>
-          <% if key.person.nil? %>
-            <%= "Unassigned" %>
-          <% else %>
-            <%= key.person.name %>
-          <% end %>
+          <%= key.person.name %>
         </td>
         <td><%= key.locations.join(', ') %></td>
 <!--

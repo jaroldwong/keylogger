@@ -5,6 +5,8 @@ class KeysController < ApplicationController
   # GET /keys.json
   def index
     case params[:scope]
+      when 'assigned'
+        @keys = Key.assigned
       when 'unassigned'
         @keys = Key.unassigned
       when 'missing'
@@ -76,6 +78,6 @@ class KeysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def key_params
-      params.require(:key).permit(:serial_no, :key_class, :person_id, :issued)
+      params.require(:key).permit(:serial_no, :key_class, :person_id, :missing)
     end
 end

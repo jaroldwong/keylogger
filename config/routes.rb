@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'keys#index'
 
   get "keys/:scope" => "keys#index",
-    constraints: { scope: /unassigned|missing/ }, as: :filtered_keys
+    constraints: { scope: /assigned|unassigned|missing/ }, as: :filtered_keys
 
   resources :locations
   resources :keys
