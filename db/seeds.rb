@@ -22,24 +22,27 @@ DepartmentPerson.create!([
   {department_id: 6, person_id: 6}
 ])
 Key.create!([
-  {serial_no: "E1TF", key_class: "E1T", person_id: 1, issued: false},
-  {serial_no: "E1TD", key_class: "E1T", person_id: 2, issued: false},
-  {serial_no: "E1TK83", key_class: "E1T", person_id: 6, issued: true},
-  {serial_no: "E1TK83", key_class: "E1T", person_id: 5, issued: true},
-  {serial_no: "E1TH70", key_class: "4", person_id: 6, issued: true},
-  {serial_no: "E1TH70", key_class: "1", person_id: 5, issued: true},
-  {serial_no: "A1YA50", key_class: "2", person_id: 5, issued: true},
-  {serial_no: "E1TK82", key_class: "10", person_id: 4, issued: true}
+  {serial_no: "E1TF", key_class: "E1T", person_id: 1, missing: false},
+  {serial_no: "E1TD", key_class: "E1T", person_id: 1, missing: false},
+  {serial_no: "E1TK83", key_class: "E1T", person_id: 6, missing: false},
+  {serial_no: "E1TK83", key_class: "E1T", person_id: 5, missing: false},
+  {serial_no: "E1TH70", key_class: "E1TH", person_id: 6, missing: false},
+  {serial_no: "E1TH70", key_class: "1", person_id: 5, missing: false},
+  {serial_no: "A1YA50", key_class: "2", person_id: 5, missing: false},
+  {serial_no: "E1TK82", key_class: "10", person_id: 4, missing: false},
+  {serial_no: "HST2", key_class: "A", person_id: 1, missing: false}
 ])
 Keyway.create!([
   {key_class: "E1T"},
-  {key_class: "E1TB"},
-  {key_class: "E1TK"},
   {key_class: "E1TH"},
+  {key_class: "E1TK"},
+  {key_class: "E1TB"},
   {key_class: "A1YA"}
 ])
 KeywayLocation.create!([
-  {key_class: "E1T", location_id: 1}
+  {location_id: 1, keyway_id: 1},
+  {location_id: 2, keyway_id: 2},
+  {location_id: 3, keyway_id: 1}
 ])
 Location.create!([
   {building: "SSH", room: "130"},
@@ -49,7 +52,7 @@ Location.create!([
   {building: "SSH", room: "2208"}
 ])
 Person.create!([
-  {name: "Unassigned", loginid: "unassigned"},
+  {name: "None", loginid: "nil"},
   {name: "Anya Gibson", loginid: "abschwin"},
   {name: "Monica Fischer", loginid: "mlfische"},
   {name: "Kathy Miner", loginid: "keminer"},
