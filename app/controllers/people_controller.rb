@@ -4,11 +4,7 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
-    if params[:query].present?
-      @people = Person.search(params[:query])
-    else
       @people = Person.all
-    end
   end
 
   # GET /people/1
@@ -65,10 +61,6 @@ class PeopleController < ApplicationController
       format.html { redirect_to people_url, notice: 'Person was successfully destroyed.' }
       format.json { head :no_content }
     end
-  end
-
-  def autocomplete
-    render json: Person.search(params[:query], autocomplete: true, limit:10).map(&:name)
   end
 
   private

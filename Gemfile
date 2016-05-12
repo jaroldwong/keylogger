@@ -27,9 +27,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Plugin to dump data to seed file
 gem 'seed_dump'
 
-# ElasticSearch plugin
-gem 'searchkick'
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
