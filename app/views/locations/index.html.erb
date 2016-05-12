@@ -5,6 +5,7 @@
     <tr>
       <th>Building</th>
       <th>Room</th>
+      <th>Keyways</th>
     </tr>
   </thead>
 
@@ -13,6 +14,11 @@
       <tr data-link="<%= location_path(location) %>">
         <td><%= location.building %></td>
         <td><%= location.room %></td>
+        <td>
+          <% location.keyways.map do |keyway| %>
+            <%= keyway.key_class %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

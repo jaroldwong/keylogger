@@ -2,12 +2,7 @@
 
 <p>
   <strong>Room: </strong>
-  <%= @location.building + @location.room %>
-</p>
-
-<p>
-  <strong>Department:</strong>
-  <%= @location.departments.first.name %>
+  <%= @location.display_name %>
 </p>
 
 <p>
